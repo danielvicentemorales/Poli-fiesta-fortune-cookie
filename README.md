@@ -1,2 +1,12 @@
-# Poli-fiesta-fortune-cookie
-Web app to promote messages about the importance of not drinking and driving.
+# Polifiesta Fortune Cookie
+
+A mobile-friendly web app created with Polifiesta to promote responsible driving. 
+Open the digital fortune cookie to reveal meaningful messages encouraging safe choices and avoiding drinking and driving.
+
+## Features
+
+- Interactive cookie animation.
+- Random safety messages.
+- Mobile-optimized design.
+
+Built to inspire safety and responsibility. 🚗✨
