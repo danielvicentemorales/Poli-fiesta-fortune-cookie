@@ -4,7 +4,7 @@ html, body {
     padding: 0;
     height: 100%;
     width: 100%;
-    font-family: 'Fredoka One', sans-serif;
+    font-family: 'Baloo 2', cursive; /* Fuente divertida y juguetona */
     overflow-x: hidden; /* Elimina el scroll lateral */
 }
 
@@ -44,6 +44,21 @@ html, body {
     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
 }
 
+/* Título sobre la galleta */
+.cookie-title {
+    font-family: 'Fredoka One', sans-serif; /* Mantiene coherencia con la fuente general */
+    font-size: clamp(2rem, 4vw, 3rem); /* Tamaño dinámico según el viewport */
+    background: linear-gradient(to right, #ff7eb3, #ffb347); /* Gradiente vibrante */
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2); /* Sombra para resaltar */
+    margin-bottom: 20px; /* Espacio entre el título y la galleta */
+    text-align: center;
+    white-space: nowrap; /* Evita saltos de línea */
+    letter-spacing: 1px; /* Espaciado limpio entre letras */
+}
+
 /* Main Section */
 #intro {
     margin: 20px auto; /* Espacio entre el header y el SVG */
@@ -65,6 +80,7 @@ html, body {
     position: relative;
     width: 100%;
     max-width: 320px; /* Tamaño máximo para evitar que toque los bordes */
+    aspect-ratio: 1; /* Mantiene proporciones cuadradas */
     height: auto;
     margin: 0 auto;
 }
@@ -104,26 +120,39 @@ html, body {
 /* Contact Info */
 .container-info {
     display: flex;
-    justify-content: space-evenly; /* Espacio uniforme entre imágenes */
+    justify-content: flex-start; /* Alinea las imágenes al inicio */
     align-items: center;
     flex-wrap: wrap; /* Permite que las imágenes pasen a nuevas líneas si es necesario */
-    gap: 20px; /* Espacio entre filas y columnas */
+    gap: 40px; /* Espacio entre imágenes */
     margin: 20px auto; /* Márgenes superior e inferior */
     padding: 10px; /* Espacio interno */
+    
 }
+
 
 .container-info .col-4 {
     flex: 1 1 auto; /* Ajusta automáticamente el tamaño de las columnas */
     text-align: center;
 }
 
+/* Hover Effect for Contact Images */
 .container-info img {
     max-width: 100%; /* Se ajusta al contenedor */
     height: auto; /* Mantiene la proporción */
     border-radius: 10px; /* Bordes redondeados */
-    cursor: default;
-    width: 100%; /* Ocupa todo el ancho disponible de su contenedor */
-    max-width: 200px; /* Limita el tamaño máximo en pantallas grandes */
+    cursor: pointer; /* Indica que la imagen es interactiva */
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out; /* Transiciones suaves */
+}
+
+.container-info img:hover {
+    transform: scale(1.1); /* Agranda la imagen ligeramente */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra para resaltar */
+}
+
+/* Mobile Interaction (Simulates Hover on Touch) */
+.container-info img:active {
+    transform: scale(1.2); /* Agranda más en dispositivos táctiles */
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.3); /* Sombra más intensa */
 }
 
 /* Footer Images Section */
@@ -134,6 +163,7 @@ html, body {
     cursor: default; /* Cursor predeterminado para imágenes no interactivas */
     margin: 10px auto; /* Centra las imágenes y añade espacio */
 }
+
 
 /* Footer */
 .footer {
