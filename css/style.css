@@ -177,10 +177,8 @@ html, body {
     font-size: 2.5rem;
     color: #fff;
     text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
-    font-family: 'Playfair Display', serif; /* Fuente más delgada y elegante */
-    letter-spacing: 1px; /* Espaciado limpio entre letras */
-    font-style: italic; /* Estilo inclinado */
-    font-weight: 500; /* Peso más ligero */
+    font-family: 'Bungee', sans-serif; /* Cambiado a un estilo similar al de la imagen */
+    letter-spacing: 1px; /* Añade espacio limpio entre letras */
 }
 
 /* Responsividad para pantallas medianas */
