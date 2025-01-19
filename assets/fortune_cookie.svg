@@ -1,29 +1,18 @@
-<svg id="fortuneCookie" xmlns="http://www.w3.org/2000/svg" viewBox="-50 -50 300 300" width="100%" height="auto" class="fortune-cookie">
-    <!-- Definición del filtro para la sombra -->
-    <defs>
-        <filter id="roundedShadow" x="-10%" y="-10%" width="120%" height="120%">
-            <feDropShadow dx="4" dy="4" stdDeviation="6" flood-color="rgba(0, 0, 0, 0.5)" />
-        </filter>
-    </defs>
+<svg id="fortuneCookie" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="100%" height="auto" class="fortune-cookie">
+    <!-- Fondo del SVG -->
+    <rect x="-200" y="0" width="400" height="200" fill="#fff" />
 
-    <!-- Fondo del SVG con forma circular y sombra ajustada -->
-    <circle cx="100" cy="100" r="100" fill="#f4f4f4" stroke="#ccc" stroke-width="2" filter="url(#roundedShadow)" />
-    
     <!-- Galleta izquierda -->
-    <path class="cookie-left" d="M100,150 L50,100 A50,50 0 0,1 100,50 Z" fill="#d4a373" />
-    
+    <path class="cookie-left" d="M100,150 L50,100 A50,50 0 0,1 100,50 Z" fill="#d4a373" stroke="#c28f64" stroke-width="2" />
+
     <!-- Galleta derecha -->
-    <path class="cookie-right" d="M100,150 L150,100 A50,50 0 0,0 100,50 Z" fill="#c89666" />
-    
-    <!-- Galleta rota (izquierda) -->
-    <path class="cookie-left-broken" d="M100,140 L60,100 A50,50 0 0,1 100,60 Z" fill="#d4a373" opacity="0" />
-    
-    <!-- Galleta rota (derecha) -->
-    <path class="cookie-right-broken" d="M100,140 L140,100 A50,50 0 0,0 100,60 Z" fill="#c89666" opacity="0" />
-    
-    <!-- Papel -->
-    <g class="paper" opacity="0">
-        <rect x="-25" y="110" width="250" height="40" rx="5" ry="5" fill="white" stroke="#000" stroke-width="2" />
-        <text class="message" x="100" y="130" text-anchor="middle" font-family="Poppins" font-size="12" fill="#000">Tu fortuna está aquí</text>
+    <path class="cookie-right" d="M100,150 L150,100 A50,50 0 0,0 100,50 Z" fill="#c89666" stroke="#a67948" stroke-width="2" />
+
+    <!-- Papel (oculto hasta que se abra la galleta) -->
+    <g class="paper" style="display: none;" opacity="0">
+        <rect x="0" y="110" width="200" height="50" rx="10" ry="10" fill="white" stroke="#000" stroke-width="2" />
+        <text class="message" x="100" y="135" text-anchor="middle" font-family="Poppins" font-size="clamp(14px, 3.5vw, 22px)" fill="#000">
+            Tu fortuna está aquí
+        </text>
     </g>
 </svg>
