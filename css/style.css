@@ -1,0 +1,193 @@
+/* General Reset */
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    font-family: 'Fredoka One', sans-serif;
+    overflow-x: hidden; /* Elimina el scroll lateral */
+}
+
+/* Header Contenedor */
+.header {
+    text-align: center;
+    padding: 10px;
+}
+
+/* Imagen del logo en el Header */
+.header-logo {
+    height: 10vw; /* Tamaño dinámico basado en el ancho del viewport */
+    max-height: 6.3em; /* Tamaño máximo en dispositivos grandes */
+    width: auto; /* Mantiene la proporción del logo */
+    vertical-align: middle; /* Alinea el logo con el texto */
+    display: inline-block;
+    margin-right: 0.5em; /* Espacio entre el logo y el texto */
+}
+
+/* Título principal del Header */
+.header h1 {
+    font-family: 'Bungee', sans-serif;
+    font-size: 4rem; /* Tamaño ajustado para evitar saltos de línea */
+    background: linear-gradient(to right, #4f93ff, #ffd700);
+    background-clip: text; /* Propiedad estándar */
+    -webkit-background-clip: text; /* Compatibilidad con navegadores Webkit */
+    -webkit-text-fill-color: transparent; /* Necesario para que el gradiente funcione en Webkit */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+    white-space: nowrap; /* Evita el salto de línea */
+}
+
+/* Subtítulo del Header */
+.header h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    color: orange;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+/* Main Section */
+#intro {
+    margin: 20px auto; /* Espacio entre el header y el SVG */
+    padding: 10px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    max-width: 90%; /* Limita el ancho del contenedor */
+}
+
+/* Cookie Container */
+#fortuneCookieContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    width: 100%;
+    max-width: 320px; /* Tamaño máximo para evitar que toque los bordes */
+    height: auto;
+    margin: 0 auto;
+}
+
+/* Sombra para el viewBox */
+#fortuneCookieContainer svg rect {
+    rx: 20; /* Asegura que las esquinas del rectángulo sean redondeadas */
+    ry: 20;
+    filter: drop-shadow(0px 8px 16px rgba(0, 0, 0, 0.5)); /* Sombra suave y redondeada */
+    transition: all 0.3s ease; /* Animación suave para hover o cambios */
+}
+
+/* Papel */
+.paper {
+    transform: translateY(-30px);
+    opacity: 1;
+    transition: transform 0.4s ease-in-out;
+}
+
+/* Mensaje dentro del papel */
+.message {
+    font-size: 12px;
+    fill: #000;
+    opacity: 1;
+    transition: opacity 0.4s ease-in-out;
+}
+
+/* Cookie Hover Effect */
+#fortuneCookieContainer svg {
+    transition: transform 0.3s ease-in-out;
+}
+
+#fortuneCookieContainer svg:hover {
+    transform: scale(1.1); /* Agrandar suavemente */
+}
+
+/* Contact Info */
+.container-info {
+    display: flex;
+    justify-content: space-evenly; /* Espacio uniforme entre imágenes */
+    align-items: center;
+    flex-wrap: wrap; /* Permite que las imágenes pasen a nuevas líneas si es necesario */
+    gap: 20px; /* Espacio entre filas y columnas */
+    margin: 20px auto; /* Márgenes superior e inferior */
+    padding: 10px; /* Espacio interno */
+}
+
+.container-info .col-4 {
+    flex: 1 1 auto; /* Ajusta automáticamente el tamaño de las columnas */
+    text-align: center;
+}
+
+.container-info img {
+    max-width: 100%; /* Se ajusta al contenedor */
+    height: auto; /* Mantiene la proporción */
+    border-radius: 10px; /* Bordes redondeados */
+    cursor: default;
+    width: 100%; /* Ocupa todo el ancho disponible de su contenedor */
+    max-width: 200px; /* Limita el tamaño máximo en pantallas grandes */
+}
+
+/* Footer Images Section */
+.container-fluid .row img {
+    max-width: 100%; /* Asegura que las imágenes no se desborden */
+    height: auto; /* Mantiene la proporción de las imágenes */
+    border-radius: 10px; /* Bordes redondeados */
+    cursor: default; /* Cursor predeterminado para imágenes no interactivas */
+    margin: 10px auto; /* Centra las imágenes y añade espacio */
+}
+
+/* Footer */
+.footer {
+    background: linear-gradient(to right, #4f93ff, #ffd700);
+    height: auto;
+    padding: 20px 0; /* Añade espacio interno */
+    text-align: center;
+}
+
+.hashtag.mb-0 {
+    font-size: 2.5rem;
+    color: #fff;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+/* Responsividad para pantallas medianas */
+@media (max-width: 768px) {
+    .header h1 {
+        font-size: 3.5rem; /* Reduce el tamaño del texto en pantallas medianas */
+    }
+    .header-logo {
+        height: 8vw; /* Tamaño más grande para pantallas medianas */
+        max-height: 6em; /* Límite máximo en dispositivos medianos */
+    }
+    #fortuneCookieContainer {
+        max-width: 300px; /* Reduce el ancho máximo del SVG */
+    }
+    .container-info img {
+        max-width: 150px; /* Tamaño más pequeño en pantallas medianas */
+    }
+    .footer {
+        padding: 15px 0; /* Reduce el espacio interno en el footer */
+    }
+}
+
+/* Responsividad para pantallas pequeñas */
+@media (max-width: 480px) {
+    .header h1 {
+        font-size: 2.8rem; /* Ajusta el texto para pantallas pequeñas */
+    }
+    .header-logo {
+        height: 10vw; /* Logo más grande para pantallas pequeñas */
+        max-height: 6em; /* Límite máximo en dispositivos pequeños */
+    }
+    #fortuneCookieContainer {
+        max-width: 260px; /* Reduce aún más el tamaño máximo del SVG */
+    }
+    .container-info img {
+        max-width: 120px; /* Tamaño reducido en pantallas pequeñas */
+    }
+    .footer {
+        padding: 10px 0; /* Espaciado mínimo para asegurar visibilidad */
+    }
+    .hashtag.mb-0 {
+        font-size: 2rem; /* Ajusta el tamaño del texto en el footer */
+    }
+}
