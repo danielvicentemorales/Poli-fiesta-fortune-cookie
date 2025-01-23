@@ -44,20 +44,71 @@ html, body {
     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
 }
 
+ /* Container to hold the cookie */
+ .cookie-container {
+    position: relative;
+    width: 250px; /* Fixed size for the cookie */
+    height: 200px;
+    margin: 2rem auto;
+    cursor: pointer;
+    background-color: transparent;
+}
+
+.cookie {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
+}
+
+/* Initial state of the closed cookie */
+.cookie.closed {
+    background-image: url('https://raw.githubusercontent.com/danielvicentemorales/Poli-fiesta-fortune-cookie/refs/heads/main/assets/close_cookie.png'); /* Closed cookie */
+    z-index: 2;
+    transform: scale(1);
+    opacity: 1;
+}
+
+/* Initial state of the open cookie */
+.cookie.open {
+    background-image: url('https://raw.githubusercontent.com/danielvicentemorales/Poli-fiesta-fortune-cookie/refs/heads/main/assets/open_cookie.png'); /* Open cookie */
+    z-index: 1;
+    transform: scale(0.8);
+    opacity: 0;
+}
+
+/* Animation for opening the cookie */
+.cookie-container.open .closed {
+    transform: rotateY(90deg);
+    opacity: 0;
+    z-index: 1;
+}
+
+.cookie-container.open .open {
+    transform: rotateY(0deg);
+    opacity: 1;
+    z-index: 2;
+}
+    
 /* Título sobre la galleta */
+/*
 .cookie-title {
-    font-family: 'Fredoka One', sans-serif; /* Mantiene coherencia con la fuente general */
-    font-size: clamp(2rem, 4vw, 3rem); /* Tamaño dinámico según el viewport */
-    background: linear-gradient(to right, #ff7eb3, #ffb347); /* Gradiente vibrante */
+    font-family: 'Fredoka One', sans-serif; // Mantiene coherencia con la fuente general
+    font-size: clamp(2rem, 4vw, 3rem); // Tamaño dinámico según el viewport
+    background: linear-gradient(to right, #ff7eb3, #ffb347); // Gradiente vibrante
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2); /* Sombra para resaltar */
-    margin-bottom: 20px; /* Espacio entre el título y la galleta */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2); // Sombra para resaltar 
+    margin-bottom: 20px; // Espacio entre el título y la galleta 
     text-align: center;
-    white-space: nowrap; /* Evita saltos de línea */
-    letter-spacing: 1px; /* Espaciado limpio entre letras */
+    white-space: nowrap; // Evita saltos de línea 
+    letter-spacing: 1px; // Espaciado limpio entre letras 
 }
+*/
 
 /* Main Section */
 #intro {
@@ -69,30 +120,9 @@ html, body {
     justify-content: center;
     align-items: center;
     text-align: center;
-    max-width: 90%; /* Limita el ancho del contenedor */
+    max-width: 100%; /* Limita el ancho del contenedor */
 }
-
-/* Cookie Container */
-#fortuneCookieContainer {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    width: 100%;
-    max-width: 320px; /* Tamaño máximo para evitar que toque los bordes */
-    aspect-ratio: 1; /* Mantiene proporciones cuadradas */
-    height: auto;
-    margin: 0 auto;
-}
-
-/* Sombra para el viewBox */
-#fortuneCookieContainer svg rect {
-    rx: 20; /* Asegura que las esquinas del rectángulo sean redondeadas */
-    ry: 20;
-    filter: drop-shadow(0px 8px 16px rgba(0, 0, 0, 0.5)); /* Sombra suave y redondeada */
-    transition: all 0.3s ease; /* Animación suave para hover o cambios */
-}
-
+     
 /* Papel */
 .paper {
     transform: translateY(-30px);
@@ -108,14 +138,7 @@ html, body {
     transition: opacity 0.4s ease-in-out;
 }
 
-/* Cookie Hover Effect */
-#fortuneCookieContainer svg {
-    transition: transform 0.3s ease-in-out;
-}
 
-#fortuneCookieContainer svg:hover {
-    transform: scale(1.1); /* Agrandar suavemente */
-}
 
 /* Contact Info */
 .container-info {
