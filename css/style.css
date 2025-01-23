@@ -4,7 +4,7 @@ html, body {
     padding: 0;
     height: 100vh;
     width: 100%;
-    font-family: 'Baloo 2', cursive; /* Fuente divertida y juguetona */
+    font-family: 'Baloo 2', sans-serif; /* Fuente divertida y juguetona */
     overflow-x: hidden; /* Elimina el scroll lateral */
 }
 
