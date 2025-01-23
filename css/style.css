@@ -2,10 +2,15 @@
 html, body {
     margin: 0;
     padding: 0;
-    height: 100%;
+    height: 100vh;
     width: 100%;
     font-family: 'Baloo 2', cursive; /* Fuente divertida y juguetona */
     overflow-x: hidden; /* Elimina el scroll lateral */
+}
+
+.full-screen
+{
+    height: 100 dvh;
 }
 
 /* Header Contenedor */
