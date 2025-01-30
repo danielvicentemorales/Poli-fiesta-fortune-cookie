@@ -5,7 +5,7 @@ html, body {
     height: 100vh;
     width: 100%;
     font-family: 'Baloo 2', sans-serif; /* Fuente divertida y juguetona */
-    overflow-x: hidden; /* Elimina el scroll lateral */
+    overflow-x: hidden;
 }
 
 .full-screen
@@ -17,6 +17,7 @@ html, body {
 .header {
     text-align: center;
     padding: 10px;
+    background-color: #001942;
 }
 
 /* Imagen del logo en el Header */
@@ -45,7 +46,7 @@ html, body {
 .header h2 {
     font-family: 'Bungee', sans-serif;
     font-size: 1.3rem;
-    color: orange;
+    color: #FFF700;
     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
 }
 
@@ -135,33 +136,14 @@ html, body {
     background-size: contain;
     z-index: -1;
 }
-    
-/* Título sobre la galleta */
-/*
-.cookie-title {
-    font-family: 'Fredoka One', sans-serif; // Mantiene coherencia con la fuente general
-    font-size: clamp(2rem, 4vw, 3rem); // Tamaño dinámico según el viewport
-    background: linear-gradient(to right, #ff7eb3, #ffb347); // Gradiente vibrante
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2); // Sombra para resaltar 
-    margin-bottom: 20px; // Espacio entre el título y la galleta 
-    text-align: center;
-    white-space: nowrap; // Evita saltos de línea 
-    letter-spacing: 1px; // Espaciado limpio entre letras 
-}
-*/
 
 /* Main Section */
 #intro {
     margin: 20px auto; /* Espacio entre el header y el SVG */
     padding: 10px;
-    flex: 1;
+   flex: 0 1 auto; /* No crecerá más de su contenido */
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
     text-align: center;
     max-width: 100%; /* Limita el ancho del contenedor */
 }
@@ -249,6 +231,9 @@ html, body {
 
 /* Responsividad para pantallas medianas */
 @media (max-width: 768px) {
+    html, body {
+        overflow-y:hidden;
+    }
     .header h1 {
         font-size: 3.5rem; /* Reduce el tamaño del texto en pantallas medianas */
     }
@@ -269,6 +254,9 @@ html, body {
 
 /* Responsividad para pantallas pequeñas */
 @media (max-width: 480px) {
+    html, body {
+        overflow-y:hidden;
+    }
     .header h1 {
         font-size: 2.8rem; /* Ajusta el texto para pantallas pequeñas */
     }
@@ -292,6 +280,9 @@ html, body {
 
 /* Responsividad para pantallas aún más pequeñas (menos de 375px) */
 @media (max-width: 400px) {
+    html, body {
+        overflow-y:hidden;
+    }
     .header h1 {
         font-size: 2.4rem; /* Reduce aún más el tamaño del texto */
     }
