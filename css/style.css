@@ -43,8 +43,8 @@ html, body {
 
 /* Subtítulo del Header */
 .header h2 {
-    font-family: 'Playfair Display', serif;
-    font-size: 2rem;
+    font-family: 'Bungee', sans-serif;
+    font-size: 1.3rem;
     color: orange;
     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
 }
@@ -189,7 +189,7 @@ html, body {
     justify-content: flex-start; /* Alinea las imágenes al inicio */
     align-items: center;
     flex-wrap: wrap; /* Permite que las imágenes pasen a nuevas líneas si es necesario */
-    gap: 40px; /* Espacio entre imágenes */
+    gap: 43px; /* Espacio entre imágenes */
     margin: 20px auto; /* Márgenes superior e inferior */
     padding: 10px; /* Espacio interno */
     
@@ -280,12 +280,35 @@ html, body {
         max-width: 260px; /* Reduce aún más el tamaño máximo del SVG */
     }
     .container-info img {
-        max-width: 120px; /* Tamaño reducido en pantallas pequeñas */
+        max-width: 170px; /* Tamaño reducido en pantallas pequeñas */
     }
     .footer {
         padding: 10px 0; /* Espaciado mínimo para asegurar visibilidad */
     }
     .hashtag.mb-0 {
         font-size: 2rem; /* Ajusta el tamaño del texto en el footer */
+    }
+}
+
+/* Responsividad para pantallas aún más pequeñas (menos de 375px) */
+@media (max-width: 400px) {
+    .header h1 {
+        font-size: 2.4rem; /* Reduce aún más el tamaño del texto */
+    }
+    .header-logo {
+        height: 12vw; /* Aumenta proporcionalmente */
+        max-height: 5.5em; /* Límite ajustado */
+    }
+    #fortuneCookieContainer {
+        max-width: 220px; /* Reduce más el tamaño del SVG */
+    }
+    .container-info img {
+        max-width: 150px; /* Reduce tamaño para pantallas ultra pequeñas */
+    }
+    .footer {
+        padding: 8px 0; /* Espaciado aún más compacto */
+    }
+    .hashtag.mb-0 {
+        font-size: 1.8rem; /* Ajusta texto en el footer */
     }
 }
