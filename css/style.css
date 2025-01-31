@@ -1,300 +1,378 @@
 /* General Reset */
+
 html, body {
-    margin: 0;
-    padding: 0;
-    height: 100vh;
-    width: 100%;
-    font-family: 'Baloo 2', sans-serif; /* Fuente divertida y juguetona */
-    overflow-x: hidden; /* Elimina el scroll lateral */
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  width: 100%;
+  font-family: 'Baloo 2', sans-serif;
+  overflow-x: hidden;
 }
 
-.full-screen
-{
-    height: 100 dvh;
+.full-screen {
+  height: 100 dvh;
 }
 
 /* Header Contenedor */
+
 .header {
-    text-align: center;
-    padding: 10px;
-    background-color: rgb(14, 19, 37);
+  text-align: center;
+  padding: 10px;
+  background-color: rgb(6, 19, 65);
 }
 
 /* Imagen del logo en el Header */
+
 .header-logo {
-    height: 10vw; /* Tamaño dinámico basado en el ancho del viewport */
-    max-height: 6.3em; /* Tamaño máximo en dispositivos grandes */
-    width: auto; /* Mantiene la proporción del logo */
-    vertical-align: middle; /* Alinea el logo con el texto */
-    display: inline-block;
-    margin-right: 0.5em; /* Espacio entre el logo y el texto */
+  height: 10vw;
+  max-height: 6.3em;
+  width: auto;
+  vertical-align: middle;
+  display: inline-block;
+  margin-right: 0.5em;
 }
 
 /* Título principal del Header */
+
 .header h1 {
-    font-family: 'Bungee', sans-serif;
-    font-size: 4rem; /* Tamaño ajustado para evitar saltos de línea */
-    background: linear-gradient(to right, #4f93ff, #ffd700);
-    background-clip: text; /* Propiedad estándar */
-    -webkit-background-clip: text; /* Compatibilidad con navegadores Webkit */
-    -webkit-text-fill-color: transparent; /* Necesario para que el gradiente funcione en Webkit */
-    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
-    white-space: nowrap; /* Evita el salto de línea */
+  font-family: 'Bungee', sans-serif;
+  font-size: 4rem;
+  background: linear-gradient(to right, #4f93ff, #ffd700);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+  white-space: nowrap;
 }
 
 /* Subtítulo del Header */
+
 .header h2 {
-    font-family: 'Bungee', sans-serif;
-    font-size: 1.3rem;
-    color: rgb(255, 238, 0);
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+  font-family: 'Bungee', sans-serif;
+  font-size: 1.3rem;
+  color: rgb(255, 238, 0);
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
 }
 
- /* Container to hold the cookie */
- .cookie-container {
-    position: relative;
-    width: 350px; /* Fixed size for the cookie */
-    height: 245px;
-    margin: 2rem auto;
-    cursor: pointer;
-    background-color: transparent;
+.text {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  width: 200px;
+  transform: translateX(-50%) translateY(110px);
+  font-size: 18px; /* Mantener el texto pequeño pero legible */
+  font-weight: bold;
+  text-align: center;
+  z-index: 1;
+  transition: transform 0.2s ease-in-out, box-shadow 0.3s ease-in-out;
+  cursor: pointer;
+  color: #00000073;
+}
+
+/* Efecto de presión al pasar el mouse */
+.text:hover {
+  transform: translateX(-50%) translateY(130px) scale(1.1);
+  box-shadow: 0 6px 14px rgba(255, 0, 100, 0.7);
+}
+
+
+/* Container to hold the cookie */
+
+.cookie-container {
+  position: relative;
+  width: min(40vw, 300px);
+  height: auto;
+  aspect-ratio: 4 / 3;
+  margin: 2rem auto;
+  cursor: pointer;
+  background-color: transparent;
+  transform: translateY(-30px);
 }
 
 .cookie {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
 }
 
 /* Initial state of the closed cookie */
+
 .cookie.closed {
-    background-image: url('https://raw.githubusercontent.com/danielvicentemorales/Poli-fiesta-fortune-cookie/refs/heads/main/assets/close_cookie.png'); /* Closed cookie */
-    z-index: 2;
-    transform: scale(1);
-    opacity: 1;
+  background-image: url('https://raw.githubusercontent.com/danielvicentemorales/Poli-fiesta-fortune-cookie/refs/heads/main/assets/close_cookie.png');
+  z-index: 2;
+  transform: scale(1);
+  opacity: 1;
 }
 
 /* Initial state of the open cookie */
+
 .cookie.open {
-    background-image: url('https://raw.githubusercontent.com/danielvicentemorales/Poli-fiesta-fortune-cookie/refs/heads/main/assets/open_cookie.png'); /* Open cookie */
-    z-index: 1;
-    transform: scale(0.8);
-    opacity: 0;
+  background-image: url('https://raw.githubusercontent.com/danielvicentemorales/Poli-fiesta-fortune-cookie/refs/heads/main/assets/open_cookie.png');
+  z-index: 1;
+  transform: scale(0.8);
+  opacity: 0;
 }
 
 /* Animation for opening the cookie */
+
 .cookie-container.open .closed {
-    transform: rotateY(90deg);
-    opacity: 0;
-    z-index: 1;
+  transform: rotateY(90deg);
+  opacity: 0;
+  z-index: 1;
 }
 
 .cookie-container.open .open {
-    transform: rotateY(0deg);
-    opacity: 1;
-    z-index: 2;
+  transform: rotateY(0deg);
+  opacity: 1;
+  z-index: 2;
 }
 
 .paper {
-    display: none;
-    position: absolute;
-    bottom: 20px;
-    left: 50%;
-    transform: translateX(-55%) translateY(10px);
-    width: 180px;
-    height: auto;
-    background: white;
-    border: 2px solid #ddd;
-    border-radius: 5px;
-    padding: 10px;
-    font-size: 14px;
-    font-weight: bold;
-    text-align: center;
-    z-index: 1;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-    opacity: 0;
-    transition: opacity 0.3s ease, transform 0.5s ease;
+  display: none;
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-55%) translateY(10px);
+  width: 180px;
+  height: auto;
+  background: white;
+  border: 2px solid #ddd;
+  border-radius: 5px;
+  padding: 10px;
+  font-size: 14px;
+  font-weight: bold;
+  text-align: center;
+  z-index: 1;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  opacity: 0;
+  transition: opacity 0.3s ease, transform 0.5s ease;
 }
 
 .paper.show {
-    transform: translateX(-50%) translateY(95px);
-    opacity: 1;
+  transform: translateX(-56%) translateY(130px);
+  opacity: 1;
 }
 
 .paper::after {
-    content: '';
-    position: absolute;
-    top: 100%;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 50px;
-    height: 10px;
-    background-size: contain;
-    z-index: -1;
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 50px;
+  height: 10px;
+  background-size: contain;
+  z-index: -1;
 }
-
 
 /* Main Section */
+
 #intro {
-    margin: 10px; /* Espacio entre el header y el SVG */
-    padding: 0;
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    max-width: 100%; /* Limita el ancho del contenedor */
+  margin: 10px;
+  padding: 0;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  max-width: 100%;
 }
-     
+
 /* Papel */
+
 .paper {
-    transform: translateY(-30px);
-    opacity: 1;
-    transition: transform 0.4s ease-in-out;
+  transform: translateY(-30px);
+  opacity: 1;
+  transition: transform 0.4s ease-in-out;
 }
 
 /* Mensaje dentro del papel */
+
 .message {
-    font-size: 12px;
-    fill: #000;
-    opacity: 1;
-    transition: opacity 0.4s ease-in-out;
+  font-size: 12px;
+  fill: #000;
+  opacity: 1;
+  transition: opacity 0.4s ease-in-out;
 }
-
-
 
 /* Contact Info */
+
 .container-info {
-    display: flex;
-    justify-content: flex-start; /* Alinea las imágenes al inicio */
-    align-items: center;
-    flex-wrap: wrap; /* Permite que las imágenes pasen a nuevas líneas si es necesario */
-    gap: 43px; /* Espacio entre imágenes */
-    margin: 20px auto; /* Márgenes superior e inferior */
-    padding: 10px; /* Espacio interno */
-    
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 43px;
+  margin: 20px auto;
+  padding: 10px;
 }
 
-
 .container-info .col-4 {
-    flex: 1 1 auto; /* Ajusta automáticamente el tamaño de las columnas */
-    text-align: center;
+  flex: 1 1 auto;
+  text-align: center;
 }
 
 /* Hover Effect for Contact Images */
+
 .container-info img {
-    max-width: 100%; /* Se ajusta al contenedor */
-    height: auto; /* Mantiene la proporción */
-    border-radius: 10px; /* Bordes redondeados */
-    cursor: pointer; /* Indica que la imagen es interactiva */
-    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out; /* Transiciones suaves */
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
 
 .container-info img:hover {
-    transform: scale(1.1); /* Agranda la imagen ligeramente */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra para resaltar */
+  transform: scale(1.1);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 /* Mobile Interaction (Simulates Hover on Touch) */
+
 .container-info img:active {
-    transform: scale(1.2); /* Agranda más en dispositivos táctiles */
-    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.3); /* Sombra más intensa */
+  transform: scale(1.2);
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.3);
 }
 
 /* Footer Images Section */
+
 .container-fluid .row img {
-    max-width: 100%; /* Asegura que las imágenes no se desborden */
-    height: auto; /* Mantiene la proporción de las imágenes */
-    border-radius: 10px; /* Bordes redondeados */
-    cursor: default; /* Cursor predeterminado para imágenes no interactivas */
-    margin: 10px auto; /* Centra las imágenes y añade espacio */
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+  cursor: default;
+  margin: 10px auto;
 }
 
-
 /* Footer */
+
 .footer {
-    background: linear-gradient(to right, #4f93ff, #ffd700);
-    height: auto;
-    padding: 20px 0; /* Añade espacio interno */
-    text-align: center;
+  background: linear-gradient(to right, #4f93ff, #ffd700);
+  height: auto;
+  padding: 20px 0;
+  text-align: center;
 }
 
 .hashtag.mb-0 {
-    font-size: 2.5rem;
-    color: #fff;
-    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
-    font-family: 'Bungee', sans-serif; /* Cambiado a un estilo similar al de la imagen */
-    letter-spacing: 1px; /* Añade espacio limpio entre letras */
+  font-size: 2.5rem;
+  color: #fff;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+  font-family: 'Bungee', sans-serif;
+  letter-spacing: 1px;
 }
 
-
 /* Responsividad para pantallas medianas */
+
 @media (max-width: 768px) {
-    .header h1 {
-        font-size: 3.5rem; /* Reduce el tamaño del texto en pantallas medianas */
-    }
-    .header-logo {
-        height: 8vw; /* Tamaño más grande para pantallas medianas */
-        max-height: 6em; /* Límite máximo en dispositivos medianos */
-    }
-    #fortuneCookieContainer {
-        max-width: 300px; /* Reduce el ancho máximo del SVG */
-    }
-    .container-info img {
-        max-width: 150px; /* Tamaño más pequeño en pantallas medianas */
-    }
-    .footer {
-        padding: 15px 0; /* Reduce el espacio interno en el footer */
-    }
+  .header h1 {
+    font-size: 3.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .header-logo {
+    height: 8vw;
+    max-height: 6em;
+  }
+}
+
+@media (max-width: 768px) {
+  #fortuneCookieContainer {
+    max-width: 300px;
+  }
+}
+
+@media (max-width: 768px) {
+  .container-info img {
+    max-width: 150px;
+  }
+}
+
+@media (max-width: 768px) {
+  .footer {
+    padding: 15px 0;
+  }
 }
 
 /* Responsividad para pantallas pequeñas */
+
 @media (max-width: 480px) {
-    .header h1 {
-        font-size: 2.8rem; /* Ajusta el texto para pantallas pequeñas */
-    }
-    .header-logo {
-        height: 10vw; /* Logo más grande para pantallas pequeñas */
-        max-height: 6em; /* Límite máximo en dispositivos pequeños */
-    }
-    #fortuneCookieContainer {
-        max-width: 260px; /* Reduce aún más el tamaño máximo del SVG */
-    }
-    .container-info img {
-        max-width: 170px; /* Tamaño reducido en pantallas pequeñas */
-    }
-    .footer {
-        padding: 10px 0; /* Espaciado mínimo para asegurar visibilidad */
-    }
-    .hashtag.mb-0 {
-        font-size: 2rem; /* Ajusta el tamaño del texto en el footer */
-    }
+  .header h1 {
+    font-size: 2.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .header-logo {
+    height: 10vw;
+    max-height: 6em;
+  }
+}
+
+@media (max-width: 480px) {
+  #fortuneCookieContainer {
+    max-width: 260px;
+  }
+}
+
+@media (max-width: 480px) {
+  .container-info img {
+    max-width: 170px;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer {
+    padding: 10px 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .hashtag.mb-0 {
+    font-size: 2rem;
+  }
 }
 
 /* Responsividad para pantallas aún más pequeñas (menos de 375px) */
+
 @media (max-width: 400px) {
-    .header h1 {
-        font-size: 2.4rem; /* Reduce aún más el tamaño del texto */
-    }
-    .header-logo {
-        height: 12vw; /* Aumenta proporcionalmente */
-        max-height: 5.5em; /* Límite ajustado */
-    }
-    #fortuneCookieContainer {
-        max-width: 220px; /* Reduce más el tamaño del SVG */
-    }
-    .container-info img {
-        max-width: 150px; /* Reduce tamaño para pantallas ultra pequeñas */
-    }
-    .footer {
-        padding: 8px 0; /* Espaciado aún más compacto */
-    }
-    .hashtag.mb-0 {
-        font-size: 1.8rem; /* Ajusta texto en el footer */
-    }
+  .header h1 {
+    font-size: 2.4rem;
+  }
+}
+
+@media (max-width: 400px) {
+  .header-logo {
+    height: 12vw;
+    max-height: 5.5em;
+  }
+}
+
+@media (max-width: 400px) {
+  #fortuneCookieContainer {
+    max-width: 220px;
+  }
+}
+
+@media (max-width: 400px) {
+  .container-info img {
+    max-width: 150px;
+  }
+}
+
+@media (max-width: 400px) {
+  .footer {
+    padding: 8px 0;
+  }
+}
+
+@media (max-width: 400px) {
+  .hashtag.mb-0 {
+    font-size: 1.8rem;
+  }
 }
