@@ -5,7 +5,7 @@ html, body {
     height: 100vh;
     width: 100%;
     font-family: 'Baloo 2', sans-serif; /* Fuente divertida y juguetona */
-    overflow-x: hidden;
+    overflow-x: hidden; /* Elimina el scroll lateral */
 }
 
 .full-screen
@@ -17,7 +17,6 @@ html, body {
 .header {
     text-align: center;
     padding: 10px;
-    background-color: #001942;
 }
 
 /* Imagen del logo en el Header */
@@ -46,7 +45,7 @@ html, body {
 .header h2 {
     font-family: 'Bungee', sans-serif;
     font-size: 1.3rem;
-    color: #FFF700;
+    color: orange;
     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
 }
 
@@ -136,14 +135,33 @@ html, body {
     background-size: contain;
     z-index: -1;
 }
+    
+/* Título sobre la galleta */
+/*
+.cookie-title {
+    font-family: 'Fredoka One', sans-serif; // Mantiene coherencia con la fuente general
+    font-size: clamp(2rem, 4vw, 3rem); // Tamaño dinámico según el viewport
+    background: linear-gradient(to right, #ff7eb3, #ffb347); // Gradiente vibrante
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2); // Sombra para resaltar 
+    margin-bottom: 20px; // Espacio entre el título y la galleta 
+    text-align: center;
+    white-space: nowrap; // Evita saltos de línea 
+    letter-spacing: 1px; // Espaciado limpio entre letras 
+}
+*/
 
 /* Main Section */
 #intro {
     margin: 20px auto; /* Espacio entre el header y el SVG */
     padding: 10px;
-   flex: 0 1 auto; /* No crecerá más de su contenido */
+    flex: 1;
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
     text-align: center;
     max-width: 100%; /* Limita el ancho del contenedor */
 }
@@ -229,73 +247,68 @@ html, body {
     letter-spacing: 1px; /* Añade espacio limpio entre letras */
 }
 
-/* Responsive Fixes */
-@media (max-width: 1024px) {
-    .header h1 {
-        font-size: 3.5rem;
-    }
-    .header-logo {
-        height: 9vw;
-        max-height: 5.5em;
-    }
-    .cookie-container {
-        width: 220px;
-        height: 180px;
-    }
-}
-
+/* Responsividad para pantallas medianas */
 @media (max-width: 768px) {
     .header h1 {
-        font-size: 3rem;
+        font-size: 3.5rem; /* Reduce el tamaño del texto en pantallas medianas */
     }
     .header-logo {
-        height: 8vw;
-        max-height: 5em;
+        height: 8vw; /* Tamaño más grande para pantallas medianas */
+        max-height: 6em; /* Límite máximo en dispositivos medianos */
     }
-    .cookie-container {
-        width: 200px;
-        height: 160px;
+    #fortuneCookieContainer {
+        max-width: 300px; /* Reduce el ancho máximo del SVG */
+    }
+    .container-info img {
+        max-width: 150px; /* Tamaño más pequeño en pantallas medianas */
+    }
+    .footer {
+        padding: 15px 0; /* Reduce el espacio interno en el footer */
     }
 }
 
-@media (max-width: 600px) {
-    .header h1 {
-        font-size: 2.5rem;
-    }
-    .header-logo {
-        height: 10vw;
-        max-height: 4.5em;
-    }
-    .cookie-container {
-        width: 180px;
-        height: 140px;
-    }
-}
-
+/* Responsividad para pantallas pequeñas */
 @media (max-width: 480px) {
     .header h1 {
-        font-size: 2rem;
+        font-size: 2.8rem; /* Ajusta el texto para pantallas pequeñas */
     }
     .header-logo {
-        height: 12vw;
-        max-height: 4em;
+        height: 10vw; /* Logo más grande para pantallas pequeñas */
+        max-height: 6em; /* Límite máximo en dispositivos pequeños */
     }
-    .cookie-container {
-        width: 160px;
-        height: 120px;
+    #fortuneCookieContainer {
+        max-width: 260px; /* Reduce aún más el tamaño máximo del SVG */
+    }
+    .container-info img {
+        max-width: 170px; /* Tamaño reducido en pantallas pequeñas */
+    }
+    .footer {
+        padding: 10px 0; /* Espaciado mínimo para asegurar visibilidad */
+    }
+    .hashtag.mb-0 {
+        font-size: 2rem; /* Ajusta el tamaño del texto en el footer */
     }
 }
 
-@media (max-width: 375px) {
+/* Responsividad para pantallas aún más pequeñas (menos de 375px) */
+@media (max-width: 400px) {
     .header h1 {
-        font-size: 1.8rem;
+        font-size: 2.4rem; /* Reduce aún más el tamaño del texto */
     }
     .header-logo {
-        height: 14vw;
-        max-height: 3.5em;
+        height: 12vw; /* Aumenta proporcionalmente */
+        max-height: 5.5em; /* Límite ajustado */
     }
-    .cookie-container {
-        width: 140px;
-        height: 110px;
+    #fortuneCookieContainer {
+        max-width: 220px; /* Reduce más el tamaño del SVG */
+    }
+    .container-info img {
+        max-width: 150px; /* Reduce tamaño para pantallas ultra pequeñas */
+    }
+    .footer {
+        padding: 8px 0; /* Espaciado aún más compacto */
+    }
+    .hashtag.mb-0 {
+        font-size: 1.8rem; /* Ajusta texto en el footer */
     }
 }
