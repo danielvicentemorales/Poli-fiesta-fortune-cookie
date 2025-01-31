@@ -17,6 +17,7 @@ html, body {
 .header {
     text-align: center;
     padding: 10px;
+    background-color: rgb(14, 19, 37);
 }
 
 /* Imagen del logo en el Header */
@@ -45,15 +46,15 @@ html, body {
 .header h2 {
     font-family: 'Bungee', sans-serif;
     font-size: 1.3rem;
-    color: orange;
+    color: rgb(255, 238, 0);
     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
 }
 
  /* Container to hold the cookie */
  .cookie-container {
     position: relative;
-    width: 250px; /* Fixed size for the cookie */
-    height: 200px;
+    width: 350px; /* Fixed size for the cookie */
+    height: 245px;
     margin: 2rem auto;
     cursor: pointer;
     background-color: transparent;
@@ -135,28 +136,12 @@ html, body {
     background-size: contain;
     z-index: -1;
 }
-    
-/* Título sobre la galleta */
-/*
-.cookie-title {
-    font-family: 'Fredoka One', sans-serif; // Mantiene coherencia con la fuente general
-    font-size: clamp(2rem, 4vw, 3rem); // Tamaño dinámico según el viewport
-    background: linear-gradient(to right, #ff7eb3, #ffb347); // Gradiente vibrante
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2); // Sombra para resaltar 
-    margin-bottom: 20px; // Espacio entre el título y la galleta 
-    text-align: center;
-    white-space: nowrap; // Evita saltos de línea 
-    letter-spacing: 1px; // Espaciado limpio entre letras 
-}
-*/
+
 
 /* Main Section */
 #intro {
-    margin: 20px auto; /* Espacio entre el header y el SVG */
-    padding: 10px;
+    margin: 10px; /* Espacio entre el header y el SVG */
+    padding: 0;
     flex: 1;
     display: flex;
     flex-direction: column;
@@ -246,6 +231,7 @@ html, body {
     font-family: 'Bungee', sans-serif; /* Cambiado a un estilo similar al de la imagen */
     letter-spacing: 1px; /* Añade espacio limpio entre letras */
 }
+
 
 /* Responsividad para pantallas medianas */
 @media (max-width: 768px) {
