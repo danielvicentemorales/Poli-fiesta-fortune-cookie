@@ -268,111 +268,68 @@ html, body {
 
 /* Responsividad para pantallas medianas */
 
+/* Responsividad para pantallas medianas */
 @media (max-width: 768px) {
   .header h1 {
-    font-size: 3.5rem;
+      font-size: 3.5rem; /* Reduce el tamaño del texto en pantallas medianas */
   }
-}
-
-@media (max-width: 768px) {
   .header-logo {
-    height: 8vw;
-    max-height: 6em;
+      height: 8vw; /* Tamaño más grande para pantallas medianas */
+      max-height: 6em; /* Límite máximo en dispositivos medianos */
   }
-}
-
-@media (max-width: 768px) {
   #fortuneCookieContainer {
-    max-width: 300px;
+      max-width: 300px; /* Reduce el ancho máximo del SVG */
   }
-}
-
-@media (max-width: 768px) {
   .container-info img {
-    max-width: 150px;
+      max-width: 150px; /* Tamaño más pequeño en pantallas medianas */
   }
-}
-
-@media (max-width: 768px) {
   .footer {
-    padding: 15px 0;
+      padding: 15px 0; /* Reduce el espacio interno en el footer */
   }
 }
 
 /* Responsividad para pantallas pequeñas */
-
 @media (max-width: 480px) {
   .header h1 {
-    font-size: 2.8rem;
+      font-size: 2.8rem; /* Ajusta el texto para pantallas pequeñas */
   }
-}
-
-@media (max-width: 480px) {
   .header-logo {
-    height: 10vw;
-    max-height: 6em;
+      height: 10vw; /* Logo más grande para pantallas pequeñas */
+      max-height: 6em; /* Límite máximo en dispositivos pequeños */
   }
-}
-
-@media (max-width: 480px) {
   #fortuneCookieContainer {
-    max-width: 260px;
+      max-width: 260px; /* Reduce aún más el tamaño máximo del SVG */
   }
-}
-
-@media (max-width: 480px) {
   .container-info img {
-    max-width: 170px;
+      max-width: 170px; /* Tamaño reducido en pantallas pequeñas */
   }
-}
-
-@media (max-width: 480px) {
   .footer {
-    padding: 10px 0;
+      padding: 10px 0; /* Espaciado mínimo para asegurar visibilidad */
   }
-}
-
-@media (max-width: 480px) {
   .hashtag.mb-0 {
-    font-size: 2rem;
+      font-size: 2rem; /* Ajusta el tamaño del texto en el footer */
   }
 }
 
 /* Responsividad para pantallas aún más pequeñas (menos de 375px) */
-
 @media (max-width: 400px) {
   .header h1 {
-    font-size: 2.4rem;
+      font-size: 2.4rem; /* Reduce aún más el tamaño del texto */
   }
-}
-
-@media (max-width: 400px) {
   .header-logo {
-    height: 12vw;
-    max-height: 5.5em;
+      height: 12vw; /* Aumenta proporcionalmente */
+      max-height: 5.5em; /* Límite ajustado */
   }
-}
-
-@media (max-width: 400px) {
   #fortuneCookieContainer {
-    max-width: 220px;
+      max-width: 220px; /* Reduce más el tamaño del SVG */
   }
-}
-
-@media (max-width: 400px) {
   .container-info img {
-    max-width: 150px;
+      max-width: 150px; /* Reduce tamaño para pantallas ultra pequeñas */
   }
-}
-
-@media (max-width: 400px) {
   .footer {
-    padding: 8px 0;
+      padding: 8px 0; /* Espaciado aún más compacto */
   }
-}
-
-@media (max-width: 400px) {
   .hashtag.mb-0 {
-    font-size: 1.8rem;
+      font-size: 1.8rem; /* Ajusta texto en el footer */
   }
 }
