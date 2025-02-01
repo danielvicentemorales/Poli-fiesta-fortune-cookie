@@ -134,26 +134,28 @@ html, body {
 .paper {
   display: none;
   position: absolute;
-  bottom: 20px;
-  left: 50%;
-  transform: translateX(-55%) translateY(10px);
-  width: 180px;
+  bottom: 5px;
+  left: 43%;
+  transform: translateX(-50%) translateY(10px);
+  width: 250px;
   height: auto;
-  background: white;
-  border: 2px solid #ddd;
-  border-radius: 5px;
-  padding: 10px;
-  font-size: 14px;
+  background: rgba(255, 248, 220, 0.95); /* Light beige background */
+  border: 2px solid #b8860b;
+  border-radius: 10px;
+  padding: 12px;
+  font-size: 18px;
+  font-family: 'Playfair Display', serif;
   font-weight: bold;
   text-align: center;
-  z-index: 1;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  
+  z-index: 10;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
   opacity: 0;
-  transition: opacity 0.3s ease, transform 0.5s ease;
+  transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
 }
 
 .paper.show {
-  transform: translateX(-56%) translateY(130px);
+  transform: translateX(-50%) translateY(130px);
   opacity: 1;
 }
 
