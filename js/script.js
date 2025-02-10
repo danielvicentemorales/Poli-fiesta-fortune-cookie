@@ -1,7 +1,18 @@
 // Definición de mensajes
 const messages = [
-    "Regala amor. Si bebes, pasa la llave",
-    "No conduzcas borracho, #pasalallave"
+    "Regala amor. Si bebes, pasa la llave.",
+    "No conduzcas borracho, #pasalallave",
+    "Cada decisión cuenta. Toma el camino que te lleve más lejos.",
+    "Tu futuro es brillante, cuídalo con cada paso.",
+    "Los mejores recuerdos vienen de acciones responsables.",
+    "Llega seguro hoy para disfrutar el mañana.",
+    "Tu vida y tus sueños merecen que los protejas siempre.",
+    "La mejor fortuna es llegar a casa sano. Si bebes, pasa la llave.",
+    "No pongas tu vida en juego. Pasa la llave y sigue celebrando.",
+    "Conduce con responsabilidad, no con suerte. Si tomaste, deja que otro maneje.",   
+    "Tu destino está en tus manos. Si bebes, pasa la llave.",
+    "El mejor recuerdo de la noche es volver seguro. No manejes borracho."
+    
 ];
 
 // Crear el objeto Audio
